@@ -2,7 +2,6 @@
     RED.nodes.registerType('habitica-account', {
         category: 'config',
         defaults: {
-            apiAccount: {value: '', type: 'habitica-root-account', required: true},
             username: {value: '', required: true},
             userId: {value: '', required: true},
             apiToken: {value: '', required: true},
@@ -14,12 +13,6 @@
 </script>
 
 <script type="text/html" data-template-name="habitica-account">
-    <div class="form-row">
-        <label for="node-input-apiAccount">
-            <i class="fa fa-tag"></i> API Account
-        </label>
-        <input type="text" id="node-input-apiAccount" placeholder="API Account" />
-    </div>
     <div class="form-row">
         <label for="node-config-input-username"><i class="fa fa-bookmark"></i> Username</label>
         <input type="text" id="node-config-input-username">
