@@ -8,7 +8,6 @@
         "node-red",
         "habitica"
     ],
-    "main": "src/nodes/dummy.js",
     "scripts": {
         "postinstall": "husky install",
         "postpublish": "pinst --enable",
@@ -48,7 +47,8 @@
     },
     "node-red": {
         "nodes": {
-            "dummy": "src/nodes/dummy.js"
+            "dummy": "src/nodes/dummy.js",
+            "habitica-account": "src/nodes/habitica-account.js"
         }
     }
 }
