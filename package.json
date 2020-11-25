@@ -1,14 +1,13 @@
 {
     "name": "node-red-contrib-habitica-link",
     "description": "NodeRED plugin to provide nodes for interacting with the Habitica API.",
-    "version": "0.0.1-alpha.0",
+    "version": "0.1.0",
     "author": "Bill Parrott <bill@chimericdream.com>",
     "license": "MIT",
     "keywords": [
         "node-red",
         "habitica"
     ],
-    "main": "src/nodes/dummy.js",
     "scripts": {
         "postinstall": "husky install",
         "postpublish": "pinst --enable",
@@ -28,6 +27,8 @@
     "devDependencies": {
         "@commitlint/cli": "11.0.0",
         "@commitlint/config-conventional": "11.0.0",
+        "@types/node": "^14.14.9",
+        "@types/node-red": "^1.1.1",
         "commitizen": "4.2.2",
         "cz-conventional-changelog": "3.3.0",
         "husky": "5.0.0-beta.0",
@@ -46,7 +47,9 @@
     },
     "node-red": {
         "nodes": {
-            "dummy": "src/nodes/dummy.js"
+            "dummy": "src/nodes/dummy.js",
+            "habitica-root-account": "src/nodes/habitica-root-account.js",
+            "habitica-account": "src/nodes/habitica-account.js"
         }
     }
 }
