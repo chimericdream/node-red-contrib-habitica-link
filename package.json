@@ -48,6 +48,7 @@
     "node-red": {
         "nodes": {
             "dummy": "src/nodes/dummy.js",
+            "habitica-root-account": "src/nodes/habitica-root-account.js",
             "habitica-account": "src/nodes/habitica-account.js"
         }
     }
