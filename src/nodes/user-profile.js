@@ -21,6 +21,13 @@ module.exports = RED => {
             ? ''
             : `?userFields=${fields.join(',')}`;
 
+
+        const handleErr = (err) => {
+            console.log(err);
+            node.error('Something done broke');
+            node.status({fill: 'red', shape: 'ring', text: 'Error retrieving profile'});
+        };
+
         node.on('input', async function(msg) {
             const opts = {
                 host: 'habitica.com',
@@ -45,16 +52,16 @@ module.exports = RED => {
                 req.on('end', () => {
                     response = JSON.parse(body);
 
-                    msg.fields = node.fields;
-                    msg.payload = response;
-                    node.send(msg);
-                    node.status({fill: 'green', shape: 'dot', text: 'Profile retrieved'});
+                    if (response.success) {
+                        msg.payload = response.data;
+                        node.send(msg);
+                        node.status({fill: 'green', shape: 'dot', text: 'Profile retrieved'});
+                    }
+                    else {
+                        handleErr('The response was not successful');
+                    }
                 });
-            }).on('error', err => {
-                console.log(err);
-                node.error('Something done broke');
-                node.status({fill: 'red', shape: 'ring', text: 'Error retrieving profile'});
-            });
+            }).on('error', err => handleErr(err));
         });
     }
 
