@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.1.1...v0.1.2) (2020-11-26)
+
+
+### Features
+
+* allow for some standard fields to come across [feature/5-fetch-user-data] ([4def133](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/4def133052ac7e17d886261582d1528ec7013086))
+* minimal error handling [feature/5-fetch-user-data] ([40a3e12](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/40a3e127773e13e44ce677ee5c15c123530f974e))
+
 ### [0.1.1](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.1.0...v0.1.1) (2020-11-26)
 
 
