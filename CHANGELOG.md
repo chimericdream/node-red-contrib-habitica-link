@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.1.0...v0.1.1) (2020-11-26)
+
+
+### Features
+
+* add ability to select some profile fields [feature/5-fetch-user-data] ([5f44e18](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/5f44e189787275392af248e2222a806c1c051f88))
+* basic profile fetching works [feature/5-fetch-user-data] ([0c8715d](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/0c8715d93f055106c2a962c062961212b4b75822))
+* initial profile node [feature/5-fetch-user-data] ([52c880a](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/52c880a495461ef87b98cf5c73696f4bd7cfa96d))
+* remove dummy node [feature/5-fetch-user-data] ([b92134c](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/b92134ccc3148b24e98152760646ab4b01e019b3))
+* remove extraneous account node [feature/5-fetch-user-data] ([e0b592a](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/e0b592a83d421dd27ab200c50db136579a0d4630))
+
 ## [0.1.0](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.0.1-alpha.0...v0.1.0) (2020-11-25)
 
 
