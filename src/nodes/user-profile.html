@@ -14,6 +14,16 @@
         label: function() {
             return this.name || 'Habitica: User Profile';
         },
+        oneditprepare: function() {
+            for (let i = 0; i < this.fields.length; i++) {
+                $(`#node-input-fields-${this.fields[i].replace('.', '-')}`).attr('checked', 'checked');
+            }
+        },
+        oneditsave: function() {
+            this.fields = $('input[name="node-input-fields"]:checked').map(function() {
+                return $(this)[0].value;
+            });
+        },
     });
 </script>
 
@@ -39,16 +49,16 @@
 
     <strong>Fields</strong>
     <div class="form-row">
-        <label for="node-input-fields-items.gear">
+        <label for="node-input-fields-items-gear">
             <i class="fa fa-tag"></i> Gear
         </label>
-        <input type="checkbox" id="node-input-fields-items.gear" name="node-input-fields" value="items.gear" />
+        <input type="checkbox" id="node-input-fields-items-gear" name="node-input-fields" value="items.gear" />
     </div>
     <div class="form-row">
-        <label for="node-input-fields-balance">
-            <i class="fa fa-tag"></i> Balance
+        <label for="node-input-fields-stats">
+            <i class="fa fa-tag"></i> Stats
         </label>
-        <input type="checkbox" id="node-input-fields-balance" name="node-input-fields" value="balance" />
+        <input type="checkbox" id="node-input-fields-stats" name="node-input-fields" value="stats" />
     </div>
     <div class="form-row">
         <label for="node-input-fields-achievements">
