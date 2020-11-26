@@ -8,6 +8,7 @@ module.exports = RED => {
 
         node.apiAccount = RED.nodes.getNode(config.apiAccount);
         node.account = RED.nodes.getNode(config.account);
+        node.fields = config.fields;
 
         node.on('input', async function(msg) {
             const opts = {
@@ -33,6 +34,7 @@ module.exports = RED => {
                 req.on('end', () => {
                     response = JSON.parse(body);
 
+                    msg.fields = node.fields;
                     msg.payload = response;
                     node.send(msg);
                     node.status({fill: 'green', shape: 'dot', text: 'Profile retrieved'});
