@@ -6,7 +6,7 @@
             name: {value: ''},
             apiAccount: {value: '', type: 'habitica-account', required: true},
             account: {value: '', type: 'habitica-account', required: true},
-            fields: {value: []},
+            fields: {value: ''},
         },
         inputs: 1,
         outputs: 1,
@@ -15,14 +15,26 @@
             return this.name || 'Habitica: User Profile';
         },
         oneditprepare: function() {
-            for (let i = 0; i < this.fields.length; i++) {
-                $(`#node-input-fields-${this.fields[i].replace('.', '-')}`).attr('checked', 'checked');
+            let val = '';
+
+            if (this.fields) {
+                val = this.fields.replace(',', '\n');
             }
+
+            this.editor = RED.editor.createEditor({
+                id: 'node-input-fields',
+                mode: 'ace/mode/text',
+                value: val,
+            });
         },
         oneditsave: function() {
-            this.fields = $('input[name="node-input-fields"]:checked').map(function() {
-                return $(this)[0].value;
-            });
+            this.fields = this.editor.getValue().replace('\n', ',');
+            this.editor.destroy();
+            delete this.editor;
+        },
+        oneditcancel: function() {
+            this.editor.destroy();
+            delete this.editor;
         },
     });
 </script>
@@ -46,34 +58,17 @@
         </label>
         <input type="text" id="node-input-account" placeholder="Account" />
     </div>
-
-    <strong>Fields</strong>
     <div class="form-row">
-        <label for="node-input-fields-items-gear">
-            <i class="fa fa-tag"></i> Gear
+        <label for="node-input-fields-editor">
+            <i class="fa fa-tag"></i> Fields
         </label>
-        <input type="checkbox" id="node-input-fields-items-gear" name="node-input-fields" value="items.gear" />
-    </div>
-    <div class="form-row">
-        <label for="node-input-fields-stats">
-            <i class="fa fa-tag"></i> Stats
-        </label>
-        <input type="checkbox" id="node-input-fields-stats" name="node-input-fields" value="stats" />
-    </div>
-    <div class="form-row">
-        <label for="node-input-fields-achievements">
-            <i class="fa fa-tag"></i> Achievements
-        </label>
-        <input type="checkbox" id="node-input-fields-achievements" name="node-input-fields" value="achievements" />
-    </div>
-    <div class="form-row">
-        <label for="node-input-fields-flags">
-            <i class="fa fa-tag"></i> Flags
-        </label>
-        <input type="checkbox" id="node-input-fields-flags" name="node-input-fields" value="flags" />
+        <div style="height: 250px; min-height:150px;" class="node-text-editor" id="node-input-fields-editor"></div>
+        <small>Enter one or more fields, separated by commas or line breaks. For sub-fields, use &quot;dot-notation&quot; such as <code>items.gear</code>. <a href="https://github.com/HabitRPG/habitica/blob/develop/website/server/models/user/schema.js">See the Habitica user schema</a> for more information.</small>
+        <br />
+        <small><em>Example: <code>stats,achievements,items.gear</code></em></small>
     </div>
 </script>
 
 <script type="text/html" data-help-name="habitica-user-profile">
-    <p>A simple node that converts the message payloads into all lower-case characters</p>
+    <p>Retrieve profile information for a given user from the Habitica API.</p>
 </script>

@@ -9,18 +9,9 @@ module.exports = RED => {
         node.apiAccount = RED.nodes.getNode(config.apiAccount);
         node.account = RED.nodes.getNode(config.account);
 
-        const fields = [];
-
-        if (config.fields.length > 0) {
-            for (let i = 0; i < config.fields.length; i++) {
-                fields.push(config.fields[i]);
-            }
-        }
-
-        const fieldQuery = fields.length === 0
+        const fieldQuery = config.fields.length === 0
             ? ''
-            : `?userFields=${fields.join(',')}`;
-
+            : `?userFields=${config.fields}`;
 
         const handleErr = (err) => {
             console.log(err);
