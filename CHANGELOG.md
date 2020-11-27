@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.3.0...v0.3.1) (2020-11-27)
+
+
+### Bug Fixes
+
+* correct the paths to images and stuff in readme [hotfix/v0.3.1] ([6ccc419](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/6ccc419ac447a5228e3909e9d305ac2d7c8cedd6))
+
 ## [0.3.0](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.2.0...v0.3.0) (2020-11-27)
 
 
