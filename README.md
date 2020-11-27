@@ -62,4 +62,4 @@ This project welcomes any and all who wish to contribute. To aid in this, we hav
 
 ## License
 
-AdamantiaMUD is released as open source under the MIT license. See the [license](https://github.com/chimericdream/node-red-contrib-habitica-link/blob/master/LICENSE.md) file for the full text of the license.
+Node-RED Habitica Link is released as open source under the MIT license. See the [license](https://github.com/chimericdream/node-red-contrib-habitica-link/blob/master/LICENSE.md) file for the full text of the license.
