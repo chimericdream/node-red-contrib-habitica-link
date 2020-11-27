@@ -1,7 +1,7 @@
 {
     "name": "node-red-contrib-habitica-link",
     "description": "NodeRED plugin to provide nodes for interacting with the Habitica API.",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "author": "Bill Parrott <bill@chimericdream.com>",
     "license": "MIT",
     "keywords": [
@@ -47,9 +47,8 @@
     },
     "node-red": {
         "nodes": {
-            "dummy": "src/nodes/dummy.js",
-            "habitica-root-account": "src/nodes/habitica-root-account.js",
-            "habitica-account": "src/nodes/habitica-account.js"
+            "habitica-account": "src/nodes/habitica-account.js",
+            "habitica-user-profile": "src/nodes/user-profile.js"
         }
     }
 }
