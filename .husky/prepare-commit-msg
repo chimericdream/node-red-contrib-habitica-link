@@ -13,7 +13,7 @@ if [ -n "$BRANCH_NAME" ]; then
     fi
 fi
 
-BRANCH_FORMAT_REGEX="^((fix|feature)\/[0-9]+(-[-a-z0-9]+)?|(misc|experiment)\/[-_a-zA-Z0-9]+)$"
+BRANCH_FORMAT_REGEX="^((fix|feature)\/[0-9]+(-[-a-z0-9]+)?|(release|hotfix)\/v[0-9]+.[0-9]+.[0-9]+(-.+)?|(misc|experiment)\/[-_a-zA-Z0-9]+)$"
 BRANCH_NAME_MATCH=$(echo "$BRANCH_NAME" | grep -Eo "$BRANCH_FORMAT_REGEX" || :)
 
 if [ -n "$BRANCH_NAME_MATCH" ]; then
@@ -26,12 +26,15 @@ echo "    fix/{issue #}(-{optional description})"
 echo "    feature/{issue #}(-{optional description})"
 echo "    experiment/{description}"
 echo "    misc/{description}"
+echo "    release/v#.#.#(-{optional pre-release indicator})"
+echo "    hotfix/v#.#.#(-{optional pre-release indicator})"
 echo ""
 echo "Examples:"
 echo "    fix/1234"
 echo "    fix/1234-issue-with-the-thing"
 echo "    feature/555-new-hotness"
 echo "    experiment/trying-something-out"
+echo "    release/v1.2.3"
 echo "    ..."
 echo ""
 
