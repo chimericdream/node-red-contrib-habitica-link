@@ -6,11 +6,11 @@
 
 Habitica Link provides nodes for Node-RED to fetch data from and interact with the Habitica API.
 
-### Features
+## Features
 * Fetch data from Habitica for multiple user accounts
 * Fetch profile data
 
-### Installation
+## Installation
 Habitica Link was written for **Node.js 14+** and Node-RED v1.1.3+. It supports the Habitica API version 3+.
 
 Either use the Editor - Menu - Manage Palette - Install option, or run the following command in your Node-RED user directory (typically `~/.node-red`) after installing Node-RED-dashboard.
@@ -21,7 +21,7 @@ npm install node-red-contrib-habitica-link
 
 _Note:_ As this is a new plugin in active development, the version compatibility is likely to change. That said, my goal is to only _broaden_ the version compatibility. In other words, as I continue working on the plugin, I hope to expand support for more than simply the latest Node.js LTS and Node-RED versions.
 
-### Configuration
+## Configuration
 
 When setting up your first node, you will need to define at least one set of credentials to use when querying Habitica's API. All API calls require the following information:
 
@@ -31,19 +31,19 @@ When setting up your first node, you will need to define at least one set of cre
 
 ![User Account Setup](https://raw.githubusercontent.com/chimericdream/node-red-contrib-habitica-link/main/docs/screenshots/example-user-account-config.png)
 
-### Available Nodes
+## Available Nodes
 
 - [User Profile](#user-profile)
 
-## User Profile
+### User Profile
 Use the User Profile node to fetch profile data (including things such as stats, current gold, etc) for a given user.
 
 ![User Profile Example](https://raw.githubusercontent.com/chimericdream/node-red-contrib-habitica-link/main/docs/screenshots/example-user-profile-flow.png)
 
-### Profile information
+#### Profile information
 If you don't specify which fields you want, the Habitica API will return the complete user object. [See the user schema](https://github.com/HabitRPG/habitica/blob/develop/website/server/models/user/schema.js) for a list of fields.
 
-### Retrieving specific fields
+#### Retrieving specific fields
 In the node's edit dialog, you may specify one or more fields you wish to retrieve for the user. Enter a list of field keys separated by commas or line breaks into the textarea.
 
 |  Property  | Type | Information                                                      |
