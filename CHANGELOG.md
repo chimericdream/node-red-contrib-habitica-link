@@ -2,18 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.3.1](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.3.0...v0.3.1) (2020-11-27)
-
-
+## [0.3.2](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.3.1...v0.3.2) (2020-11-28)
 ### Bug Fixes
+* change how fields string is split/joined; fix incorrect element ID [fix/11-fix-textarea] ([a3c48b8](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/a3c48b8ee947e4f68e4e454f68e2b96e5a4cec7d))
 
+## [0.3.1](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.3.0...v0.3.1) (2020-11-27)
+### Bug Fixes
 * correct the paths to images and stuff in readme [hotfix/v0.3.1] ([6ccc419](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/6ccc419ac447a5228e3909e9d305ac2d7c8cedd6))
 
 ## [0.3.0](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.2.0...v0.3.0) (2020-11-27)
-
-
 ### Features
-
 * tweak the fields input to account for how the api actually works [feature/5-fetch-user-data] ([e803376](https://github.com/chimericdream/node-red-contrib-habitica-link/commit/e803376b1ea4301202b538af294876ea01b08b03))
 
 ## [0.2.0](https://github.com/chimericdream/node-red-contrib-habitica-link/compare/v0.1.2...v0.2.0) (2020-11-26)
