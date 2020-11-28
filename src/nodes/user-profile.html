@@ -18,17 +18,17 @@
             let val = '';
 
             if (this.fields) {
-                val = this.fields.replace(',', '\n');
+                val = this.fields.split(',').join('\n');
             }
 
             this.editor = RED.editor.createEditor({
-                id: 'node-input-fields',
+                id: 'node-input-fields-editor',
                 mode: 'ace/mode/text',
                 value: val,
             });
         },
         oneditsave: function() {
-            this.fields = this.editor.getValue().replace('\n', ',');
+            this.fields = this.editor.getValue().split('\n').join(',');
             this.editor.destroy();
             delete this.editor;
         },
