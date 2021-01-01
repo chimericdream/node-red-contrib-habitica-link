@@ -50,7 +50,7 @@ module.exports = RED => {
                 });
             }).on('error', err => handleErr(err));
 
-            request.write({'text': config.text, 'type': config.type});
+            request.write({'text': config.text, 'type': config.kind});
             request.end();
         });
     }

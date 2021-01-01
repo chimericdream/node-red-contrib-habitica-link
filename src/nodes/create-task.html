@@ -3,11 +3,11 @@
         category: 'Habitica',
         color: '#a6bbcf',
         defaults: {
-            'name': {value: ''},
-            'apiAccount': {value: '', type: 'habitica-account', required: true},
-            'account': {value: '', type: 'habitica-account', required: true},
-            'text': {value: ''},
-            'type': {value: ''},
+            name: {value: ''},
+            apiAccount: {value: '', type: 'habitica-account', required: true},
+            account: {value: '', type: 'habitica-account', required: true},
+            text: {value: ''},
+            kind: {value: ''},
         },
         inputs: 1,
         outputs: 1,
@@ -44,10 +44,10 @@
         <input type="text" id="node-input-text" placeholder="Text" />
     </div>
     <div class="form-row">
-        <label for="node-input-type">
+        <label for="node-input-kind">
             <i class="fa fa-tag"></i> Type
         </label>
-        <select id="node-input-type">
+        <select id="node-input-kind">
             <option value="habit">Habit</option>
             <option value="daily">Daily</option>
             <option value="todo">Todo</option>
