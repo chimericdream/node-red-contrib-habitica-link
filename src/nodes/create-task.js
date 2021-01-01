@@ -12,8 +12,7 @@ module.exports = RED => {
         const body = {'text': config.text, 'type': config.kind};
 
         const handleErr = (err) => {
-            console.log(err);
-            node.error('Something done broke');
+            node.error(JSON.stringify(err));
             node.status({fill: 'red', shape: 'ring', text: 'Error creating task'});
         };
 
@@ -57,6 +56,8 @@ module.exports = RED => {
             }).on('error', err => handleErr(err));
 
             node.status({fill: 'blue', shape: 'dot', text: 'Sending request'});
+
+            node.log(JSON.stringify(body));
 
             request.write(body);
             request.end();
