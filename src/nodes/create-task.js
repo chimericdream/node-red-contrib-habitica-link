@@ -17,6 +17,7 @@ module.exports = RED => {
 
         node.on('input', async function(msg) {
             const opts = {
+                method: 'POST',
                 host: 'habitica.com',
                 path: '/api/v3/tasks/user',
                 headers: {
