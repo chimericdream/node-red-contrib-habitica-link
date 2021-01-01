@@ -29,6 +29,8 @@ module.exports = RED => {
                 },
             };
 
+            node.status({fill: 'blue', shape: 'dot', text: 'Creating request'});
+
             const request = https.request(opts, req => {
                 req.setEncoding('utf-8');
 
@@ -53,6 +55,8 @@ module.exports = RED => {
                     }
                 });
             }).on('error', err => handleErr(err));
+
+            node.status({fill: 'blue', shape: 'dot', text: 'Sending request'});
 
             request.write(body);
             request.end();
