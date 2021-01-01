@@ -9,6 +9,8 @@ module.exports = RED => {
         node.apiAccount = RED.nodes.getNode(config.apiAccount);
         node.account = RED.nodes.getNode(config.account);
 
+        const body = {'text': config.text, 'type': config.kind};
+
         const handleErr = (err) => {
             console.log(err);
             node.error('Something done broke');
@@ -51,7 +53,7 @@ module.exports = RED => {
                 });
             }).on('error', err => handleErr(err));
 
-            request.write({'text': config.text, 'type': config.kind});
+            request.write(body);
             request.end();
         });
     }
