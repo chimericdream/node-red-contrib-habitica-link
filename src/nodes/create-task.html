@@ -44,15 +44,15 @@
         <input type="text" id="node-input-text" placeholder="Text" />
     </div>
     <div class="form-row">
-        <label for="node-input-type-habit">
+        <label for="node-input-type">
             <i class="fa fa-tag"></i> Type
         </label>
-        <div>
-            <label><input type="radio" name="node-input-type" id="node-input-type-habit" value="habit" /> Habit</label>
-            <label><input type="radio" name="node-input-type" id="node-input-type-daily" value="daily" /> Daily</label>
-            <label><input type="radio" name="node-input-type" id="node-input-type-todo" value="todo" /> Todo</label>
-            <label><input type="radio" name="node-input-type" id="node-input-type-reward" value="reward" /> Reward</label>
-        </div>
+        <select id="node-input-type">
+            <option value="habit">Habit</option>
+            <option value="daily">Daily</option>
+            <option value="todo">Todo</option>
+            <option value="reward">Reward</option>
+        </select>
     </div>
 </script>
 
