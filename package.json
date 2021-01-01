@@ -48,6 +48,7 @@
     "node-red": {
         "nodes": {
             "habitica-account": "src/nodes/habitica-account.js",
+            "habitica-create-task": "src/nodes/create-task.js",
             "habitica-user-profile": "src/nodes/user-profile.js"
         }
     }

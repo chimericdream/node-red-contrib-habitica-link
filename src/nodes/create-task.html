@@ -1,0 +1,61 @@
+<script type="text/javascript">
+    RED.nodes.registerType('habitica-create-task', {
+        category: 'Habitica',
+        color: '#a6bbcf',
+        defaults: {
+            'name': {value: ''},
+            'apiAccount': {value: '', type: 'habitica-account', required: true},
+            'account': {value: '', type: 'habitica-account', required: true},
+            'text': {value: ''},
+            'type': {value: ''},
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'file.png',
+        label: function() {
+            return this.name || 'Habitica: Create Task';
+        },
+    });
+</script>
+
+<script type="text/html" data-template-name="habitica-create-task">
+    <div class="form-row">
+        <label for="node-input-name">
+            <i class="fa fa-tag"></i> Name
+        </label>
+        <input type="text" id="node-input-name" placeholder="Name" />
+    </div>
+    <div class="form-row">
+        <label for="node-input-apiAccount">
+            <i class="fa fa-tag"></i> API Account
+        </label>
+        <input type="text" id="node-input-apiAccount" placeholder="API Account" />
+    </div>
+    <div class="form-row">
+        <label for="node-input-account">
+            <i class="fa fa-tag"></i> Account
+        </label>
+        <input type="text" id="node-input-account" placeholder="Account" />
+    </div>
+    <div class="form-row">
+        <label for="node-input-text">
+            <i class="fa fa-tag"></i> Text
+        </label>
+        <input type="text" id="node-input-text" placeholder="Text" />
+    </div>
+    <div class="form-row">
+        <label for="node-input-type-habit">
+            <i class="fa fa-tag"></i> Type
+        </label>
+        <div>
+            <label><input type="radio" name="node-input-type" id="node-input-type-habit" value="habit" /> Habit</label>
+            <label><input type="radio" name="node-input-type" id="node-input-type-daily" value="daily" /> Daily</label>
+            <label><input type="radio" name="node-input-type" id="node-input-type-todo" value="todo" /> Todo</label>
+            <label><input type="radio" name="node-input-type" id="node-input-type-reward" value="reward" /> Reward</label>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="habitica-user-profile">
+    <p>Create a task for a given user.</p>
+</script>
