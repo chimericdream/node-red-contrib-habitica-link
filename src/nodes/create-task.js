@@ -48,6 +48,7 @@ module.exports = RED => {
                         node.status({fill: 'green', shape: 'dot', text: 'Task created'});
                     }
                     else {
+                        console.dir(response);
                         handleErr('The response was not successful');
                     }
                 });
